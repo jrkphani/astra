@@ -27,20 +27,20 @@ const sparkStages: StageData[] = [
     icon: <Zap className="w-6 h-6" />,
     color: 'bg-yellow-500',
     description: 'Initial evaluation and proof of concept',
-    cloudSpend: '$0 - $10K',
-    workloads: '1-2 workloads',
+    cloudSpend: '$5K - $25K',
+    workloads: 'POC Only',
     maturity: 'Exploring cloud',
     activities: [
-      'Initial meetings and discovery',
+      'Initial discovery workshops',
       'Technical proof of concept',
-      'Cost-benefit analysis',
-      'Stakeholder alignment'
+      'Single use-case validation',
+      'Stakeholder buy-in'
     ],
     outcomes: [
-      'Technical validation completed',
-      'Business case approved',
-      'Initial migration plan',
-      'Executive sponsorship secured'
+      'Technical feasibility proven',
+      'Business value identified',
+      'POC successfully completed',
+      'Decision to proceed secured'
     ],
     progress: 20
   },
@@ -49,21 +49,21 @@ const sparkStages: StageData[] = [
     name: 'Kindle',
     icon: <Flame className="w-6 h-6" />,
     color: 'bg-orange-500',
-    description: 'Production implementation and early adoption',
-    cloudSpend: '$10K - $50K',
-    workloads: '3-5 workloads',
-    maturity: 'Early production',
+    description: 'Extended POC with multiple use cases',
+    cloudSpend: '$25K - $100K',
+    workloads: 'Multiple POCs',
+    maturity: 'Validating approach',
     activities: [
-      'First production workload migration',
-      'Team training and enablement',
-      'Initial governance setup',
-      'Performance optimization'
+      'Expanding POC scope',
+      'Testing multiple scenarios',
+      'Early team enablement',
+      'Building business case'
     ],
     outcomes: [
-      'Production workloads running',
-      'Cost optimization achieved',
-      'Team capabilities enhanced',
-      'Governance framework established'
+      'Multiple use cases validated',
+      'ROI clearly demonstrated',
+      'Production roadmap defined',
+      'Budget approval for production'
     ],
     progress: 40
   },
@@ -72,21 +72,21 @@ const sparkStages: StageData[] = [
     name: 'Flare',
     icon: <Fire className="w-6 h-6" />,
     color: 'bg-orange-600',
-    description: 'Multiple workload expansion and scaling',
-    cloudSpend: '$50K - $250K',
-    workloads: '6-15 workloads',
-    maturity: 'Scaling adoption',
+    description: 'First production implementations',
+    cloudSpend: '$100K - $500K',
+    workloads: '3-10 production workloads',
+    maturity: 'Production ready',
     activities: [
-      'Multi-workload migration',
-      'Advanced service adoption',
-      'Automation implementation',
-      'Security hardening'
+      'Production workload migration',
+      'Establishing best practices',
+      'Implementing governance',
+      'Scaling operations'
     ],
     outcomes: [
-      'Multiple business units engaged',
-      'Automation reducing manual effort',
-      'Advanced services leveraged',
-      'Security posture strengthened'
+      'Production systems live',
+      'Operational excellence achieved',
+      'Cost optimization realized',
+      'Team fully enabled'
     ],
     progress: 60
   },
@@ -95,21 +95,21 @@ const sparkStages: StageData[] = [
     name: 'Ignite',
     icon: <Rocket className="w-6 h-6" />,
     color: 'bg-red-500',
-    description: 'Mission-critical deployment and transformation',
-    cloudSpend: '$250K - $1M',
-    workloads: '16-50 workloads',
-    maturity: 'Strategic adoption',
+    description: 'Enterprise-scale production deployments',
+    cloudSpend: '$500K - $2M',
+    workloads: '10-50 production workloads',
+    maturity: 'Enterprise adoption',
     activities: [
       'Mission-critical migrations',
-      'Enterprise-wide standards',
-      'Innovation initiatives',
-      'Partner ecosystem integration'
+      'Complex integrations',
+      'Advanced service adoption',
+      'Innovation initiatives'
     ],
     outcomes: [
-      'Core systems modernized',
-      'Innovation culture established',
-      'Partner ecosystem integrated',
-      'Measurable business transformation'
+      'Core business systems migrated',
+      'Significant cost savings',
+      'Innovation pipeline active',
+      'Strategic transformation visible'
     ],
     progress: 80
   },
@@ -118,21 +118,21 @@ const sparkStages: StageData[] = [
     name: 'Blaze',
     icon: <Star className="w-6 h-6" />,
     color: 'bg-red-600',
-    description: 'Full optimization and strategic partnership',
-    cloudSpend: '$1M+',
-    workloads: '50+ workloads',
-    maturity: 'Cloud-first',
+    description: 'Strategic transformation at scale',
+    cloudSpend: '$2M+',
+    workloads: '50+ production workloads',
+    maturity: 'Cloud-first enterprise',
     activities: [
-      'Cloud-native development',
-      'Advanced analytics and AI/ML',
-      'Global scale operations',
-      'Strategic co-innovation'
+      'Cloud-native innovation',
+      'AI/ML at scale',
+      'Global operations',
+      'Market differentiation'
     ],
     outcomes: [
-      'Industry leadership position',
-      'Continuous innovation',
+      'Industry leadership achieved',
+      'Continuous innovation culture',
       'Strategic AWS partnership',
-      'Market differentiation achieved'
+      'Competitive advantage secured'
     ],
     progress: 100
   }
@@ -148,10 +148,27 @@ export default function SparkJourneyVisualization() {
         <CardHeader>
           <CardTitle className="text-2xl">SPARK Customer Journey</CardTitle>
           <CardDescription>
-            Navigate through the 5-stage journey from cloud exploration to strategic partnership
+            Progressive journey from proof of concepts to enterprise-scale production implementations
           </CardDescription>
         </CardHeader>
         <CardContent>
+          {/* POC vs Production Indicator */}
+          <div className="mb-6 p-4 bg-muted rounded-lg">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-semibold">Journey Progression</span>
+              <span className="text-xs text-muted-foreground">Increasing complexity & deal value →</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex-1 bg-yellow-100 p-2 rounded text-center">
+                <Badge variant="outline" className="bg-yellow-50">POC Phase</Badge>
+                <p className="text-xs mt-1">Spark & Kindle</p>
+              </div>
+              <div className="flex-1 bg-gradient-to-r from-orange-100 to-red-100 p-2 rounded text-center">
+                <Badge variant="outline" className="bg-orange-50">Production Phase</Badge>
+                <p className="text-xs mt-1">Flare, Ignite & Blaze</p>
+              </div>
+            </div>
+          </div>
           <div className="relative">
             {/* Progress Line */}
             <div className="absolute top-12 left-0 right-0 h-1 bg-muted">
@@ -222,19 +239,27 @@ export default function SparkJourneyVisualization() {
               </TabsList>
               <TabsContent value="overview" className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Key Characteristics</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge>{selectedStage.cloudSpend}</Badge>
-                    <Badge variant="secondary">{selectedStage.workloads}</Badge>
+                  <h4 className="font-semibold mb-2">Stage Characteristics</h4>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <Badge className="text-sm">{selectedStage.workloads}</Badge>
                     <Badge variant="outline">{selectedStage.maturity}</Badge>
+                  </div>
+                  <div className="p-3 bg-muted rounded-lg">
+                    <p className="text-xs text-muted-foreground mb-1">Average Deal Value</p>
+                    <p className="text-lg font-bold text-primary">{selectedStage.cloudSpend}</p>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Journey Progress</h4>
-                  <Progress value={selectedStage.progress} className="h-2" />
+                  <h4 className="font-semibold mb-2">Complexity & Scale</h4>
+                  <Progress value={selectedStage.progress} className="h-3" />
                   <p className="text-sm text-muted-foreground mt-1">
-                    {selectedStage.progress}% of cloud journey completed
+                    {selectedStage.progress}% complexity level
                   </p>
+                  {selectedStage.id === 'spark' || selectedStage.id === 'kindle' ? (
+                    <Badge variant="secondary" className="mt-2">Proof of Concept Phase</Badge>
+                  ) : (
+                    <Badge variant="default" className="mt-2">Production Implementation</Badge>
+                  )}
                 </div>
               </TabsContent>
               <TabsContent value="metrics" className="space-y-4">
@@ -287,6 +312,57 @@ export default function SparkJourneyVisualization() {
           </Card>
         </div>
       </div>
+      
+      {/* Complexity and Deal Value Progression */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Complexity & Deal Value Progression</CardTitle>
+          <CardDescription>How engagement complexity and average deal values increase through the journey</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            {/* Deal Value Progression */}
+            <div>
+              <h4 className="font-semibold text-sm mb-3">Average Deal Value by Stage</h4>
+              <div className="space-y-2">
+                {sparkStages.map((stage) => (
+                  <div key={stage.id} className="flex items-center gap-3">
+                    <div className={`p-2 rounded ${stage.color} text-white`}>
+                      {stage.icon}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-medium text-sm">{stage.name}</span>
+                        <span className="font-bold text-primary">{stage.cloudSpend}</span>
+                      </div>
+                      <Progress value={stage.progress} className="h-2" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Key Insights Grid */}
+            <div className="grid gap-4 md:grid-cols-3 pt-4 border-t">
+              <div className="text-center p-4 bg-yellow-50 rounded-lg">
+                <div className="text-2xl font-bold text-yellow-700">2 Stages</div>
+                <p className="text-sm text-muted-foreground">POC Phase</p>
+                <p className="text-xs mt-1">Validation & Testing</p>
+              </div>
+              <div className="text-center p-4 bg-orange-50 rounded-lg">
+                <div className="text-2xl font-bold text-orange-700">3 Stages</div>
+                <p className="text-sm text-muted-foreground">Production Phase</p>
+                <p className="text-xs mt-1">Implementation & Scale</p>
+              </div>
+              <div className="text-center p-4 bg-red-50 rounded-lg">
+                <div className="text-2xl font-bold text-red-700">400x</div>
+                <p className="text-sm text-muted-foreground">Deal Growth</p>
+                <p className="text-xs mt-1">From Spark to Blaze</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }

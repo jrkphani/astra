@@ -42,7 +42,7 @@ const journeyStages: JourneyStage[] = [
     funding: 'AWS CEI / FR',
     salesOwnership: 'SDR + ISR',
     nextStage: 'evaluation',
-    rejectPath: 'recycle-nurture',
+    rejectPath: 'resell-nurture',
     rejectLabel: 'Qualified or Window Shopper?'
   },
   {
@@ -55,7 +55,7 @@ const journeyStages: JourneyStage[] = [
     funding: 'AWS PoC Funding',
     salesOwnership: 'ISR → BDM',
     nextStage: 'adoption',
-    rejectPath: 'recycle-support',
+    rejectPath: 'resell-support',
     rejectLabel: 'Sales Qualified?'
   },
   {
@@ -98,8 +98,8 @@ const journeyStages: JourneyStage[] = [
 ]
 
 const rejectPaths = [
-  { id: 'recycle-nurture', label: 'Recycle / Nurture', color: 'bg-gray-400' },
-  { id: 'recycle-support', label: 'Recycle / Support', color: 'bg-gray-400' },
+  { id: 'resell-nurture', label: 'Resell / Nurture', color: 'bg-gray-400' },
+  { id: 'resell-support', label: 'Resell / Support', color: 'bg-gray-400' },
   { id: 'support-only', label: 'Support Only', color: 'bg-gray-400' },
   { id: 'maintain-relationship', label: 'Maintain Relationship', color: 'bg-gray-400' }
 ]
